@@ -1,1 +1,1 @@
-# vMF
+The file vMF.cpp contains three functions rvMF(), dvMF() and CpvMF() for sampling from von Mises-Fisher distribution and computing some operations. Unlike movMF, this package does not take into account the mixtures of von Mises-Fisher. It is concentrated on the sampling and computes the density and the normalizing constant of von Mises-Fisher distribution. Thus it is very fast by sampling from von Mises-Fisher distribution.
