@@ -1,0 +1,32 @@
+#' @title  Normalization constant of von Mises - Fisher distribution.
+#' 
+#' @description \code{CpvMF} returns the normalization constant of von Mises - Fisher density.
+#'
+#' @details  The probability density function of the von Mises - Fisher distribution is defined by :
+#' \deqn{f(z|theta) = C_p(|theta|)\exp{(z theta)}}
+#' \eqn{|theta|} is the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter. The normalization constant \eqn{C_p()} depends 
+#' on the Bessel function of the first kind. See more details \href{http://en.wikipedia.com/wiki/Von_Mises-Fisher_distribution}{here}.
+#' 
+#' @param p as sphere dimension.
+#' @param k as the intensity parameter.
+#' @return the normalization constant.
+#' @examples
+#' 
+#' CpvMF(2,3.1)
+#' 
+#' @author 
+#' Aristide Houndetoungan <\email{ariel92and@@gmail.com}>
+#' @keywords 
+#' distribution, directional statistics, coordinates
+#' @seealso 
+#' \code{\link{rvMF}} and \code{\link{dvMF}}
+#' 
+#' @references  
+#' Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. Communications in statistics-simulation and computation, 23(1), 157-164.
+#' 
+#' @export
+
+
+CpvMF <- function(p, k){
+  return(cppCpvMF(p,k))
+}

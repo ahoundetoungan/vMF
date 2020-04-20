@@ -1,0 +1,6 @@
+useDynLib(vMF)
+import(Rcpp)
+
+export(CpvMF)
+export(dvMF)
+export(rvMF)
