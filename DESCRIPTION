@@ -13,4 +13,4 @@ Imports:
 LinkingTo: Rcpp, RcppArmadillo, BH
 Suggests: movMF, microbenchmark
 Depends: R (>= 3.3)
-RoxygenNote: 6.1.0
+RoxygenNote: 7.1.0

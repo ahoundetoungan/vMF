@@ -3,7 +3,6 @@
 \docType{package}
 \name{vMF}
 \alias{vMF}
-\alias{vMF-package}
 \title{Sample from von Mises - Fisher distribution}
 \description{
 vMF samples from von Mises-Fisher distribution and performs some operations. 
@@ -12,10 +11,12 @@ vFM particulary focuses on sampling from the distribution and performs it very q
 vMF also computes the density and normalization constant of the von Mises-Fisher distribution.
 }
 \note{
-Advanced examples of using vMF are available \href{https://houndetoungan.wixsite.com/aristide/fast-sampling-from-vmf-distribution}{online}.
+Advanced examples of using vMF are available \href{https://ahoundetoungan.github.io/blog/2017/12/01/Fast-sampling-from-von-Mises-Fisher-distribution}{online}.
 }
 \references{
-Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. Communications in statistics-simulation and computation, 23(1), 157-164.
+Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. \emph{Communications in statistics-simulation and computation}, 23(1), 157-164. \url{https://www.tandfonline.com/doi/abs/10.1080/03610919408813161}.
+
+Hornik, K., & Grun, B. (2014). \pkg{movMF}: An \R package for fitting mixtures of von Mises-Fisher distributions. \emph{Journal of Statistical Software}, 58(10), 1-31. \url{https://epub.wu.ac.at/4893/}.
 }
 \author{
 Aristide Houndetoungan <\email{ariel92and@gmail.com}>

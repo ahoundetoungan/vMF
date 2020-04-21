@@ -20,9 +20,6 @@ A matrix whose each row is a random draw from the distribution.
 \details{
 The parameter theta is such that \eqn{dim(theta)} is the sphere dimension, \eqn{|theta|} the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter.
 }
-\note{
-Advanced examples of using vMF are available \href{https://houndetoungan.wixsite.com/aristide/fast-sampling-from-vmf-distribution}{online}.
-}
 \examples{
 # Draw 1000 vectors from vM-F with parameter 1, (1,0)
 rvMF(1000,c(1,0))
@@ -33,12 +30,12 @@ rvMF(10,c(2,1,3))
 # Draw from the vMF distribution with mean direction proportional 
 # to c(1, -1) and concentration parameter 3
 rvMF(10, 3 * c(1, -1) / sqrt(2))
+  
 }
 \references{
-Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. Communications in statistics-simulation and computation, 23(1), 157-164.
-}
-\seealso{
-\code{\link[movMF]{rmovMF}}, \code{\link{CpvMF}} and \code{\link{dvMF}}
+Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. \emph{Communications in statistics-simulation and computation}, 23(1), 157-164. \url{https://www.tandfonline.com/doi/abs/10.1080/03610919408813161}.
+
+Hornik, K., & Grun, B. (2014). \pkg{movMF}: An \R package for fitting mixtures of von Mises-Fisher distributions. \emph{Journal of Statistical Software}, 58(10), 1-31. \url{https://epub.wu.ac.at/4893/}.
 }
 \author{
 Aristide Houndetoungan <\email{ariel92and@gmail.com}>

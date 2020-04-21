@@ -1,8 +1,8 @@
-#' @title  Sample from von Mises - Fisher distribution.
+#' @title Sample from von Mises - Fisher distribution.
 #' 
 #' @description \code{rvMF} returns random draws from von Mises - Fisher distribution.
 #'
-#' @details  The parameter theta is such that \eqn{dim(theta)} is the sphere dimension, \eqn{|theta|} the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter.
+#' @details The parameter theta is such that \eqn{dim(theta)} is the sphere dimension, \eqn{|theta|} the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter.
 #' 
 #' @param size as the number of draws needed.
 #' @param theta as the distribution parameter.
@@ -17,22 +17,15 @@
 #' # Draw from the vMF distribution with mean direction proportional 
 #' # to c(1, -1) and concentration parameter 3
 #' rvMF(10, 3 * c(1, -1) / sqrt(2))
-#' @note 
-#' Advanced examples of using vMF are available \href{https://houndetoungan.wixsite.com/aristide/fast-sampling-from-vmf-distribution}{online}.
 #'   
-#' @example  
-#' Advanced examples of using vMF are available \href{https://houndetoungan.wixsite.com/aristide/fast-sampling-from-vmf-distribution}{online}.
-#' 
 #' @author 
 #' Aristide Houndetoungan <\email{ariel92and@@gmail.com}>
 #' @keywords 
 #' distribution, directional statistics, coordinates
-#' @seealso 
-#' \code{\link[movMF]{rmovMF}}, \code{\link{CpvMF}} and \code{\link{dvMF}}
-#' 
 #' @references  
-#' Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. Communications in statistics-simulation and computation, 23(1), 157-164.
-#' 
+#' Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. \emph{Communications in statistics-simulation and computation}, 23(1), 157-164. \url{https://www.tandfonline.com/doi/abs/10.1080/03610919408813161}.
+#' @references 
+#' Hornik, K., & Grun, B. (2014). \pkg{movMF}: An \R package for fitting mixtures of von Mises-Fisher distributions. \emph{Journal of Statistical Software}, 58(10), 1-31. \url{https://epub.wu.ac.at/4893/}.
 #' @export
 
 rvMF <- function(size, theta){
