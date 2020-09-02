@@ -28,6 +28,6 @@ SamplemovMF        <-function(n,initial){
   }
   return(output)
 }
-TIME2 <-  microbenchmark("vMF" = SamplevMF(1000,c(0,0,0,0)), 
+TIME2 <-  microbenchmark("vMF" = SamplevMF(1000,c(0,0,0,0)),
                          "movMF" = SamplemovMF(1000,c(0,0,0,0)))
 print(TIME2)
