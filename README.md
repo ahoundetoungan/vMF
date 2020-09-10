@@ -20,4 +20,4 @@ Once the installation is done, **vMF** can be loaded as a common package in [**R
 library(vMF)
 ```
 ### How to use vMF
-I provide a vignette [[pdf](https://nbviewer.jupyter.org/github/ahoundetoungan/vMF/blob/master/doc/vMFdocx.pdf), [html](https://ahoundetoungan.com/blog/2017/12/01/An-R-Package-for-Fast-Sampling-from-von-Mises-Fisher-Distribution)] that fully documents the package. Moreover, each function of the package has a help page accessible using `?name-of-the-function`. 
+I provide a vignette [[pdf](https://nbviewer.jupyter.org/github/ahoundetoungan/vMF/blob/master/doc/vMF_docx.pdf), [html](https://ahoundetoungan.com/blog/2017/12/01/An-R-Package-for-Fast-Sampling-from-von-Mises-Fisher-Distribution)] that fully documents the package. Moreover, each function of the package has a help page accessible using `?name-of-the-function`. 
