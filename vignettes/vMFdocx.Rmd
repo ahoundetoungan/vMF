@@ -83,6 +83,4 @@ install_github("ahoundetoungan/vMF")
 ```
 The option `build_vignettes = TRUE` can be added if one desires to install the vignettes.
 
-## References{-#ref}
-
 <div id="refs"></div>
