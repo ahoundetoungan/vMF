@@ -2,14 +2,14 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 cpprvMF <- function(size, theta) {
-    .Call('_vMF_cpprvMF', PACKAGE = 'vMF', size, theta)
+    .Call(`_vMF_cpprvMF`, size, theta)
 }
 
 cppCpvMF <- function(p, k) {
-    .Call('_vMF_cppCpvMF', PACKAGE = 'vMF', p, k)
+    .Call(`_vMF_cppCpvMF`, p, k)
 }
 
 cppdvMF <- function(z, theta) {
-    .Call('_vMF_cppdvMF', PACKAGE = 'vMF', z, theta)
+    .Call(`_vMF_cppdvMF`, z, theta)
 }
 

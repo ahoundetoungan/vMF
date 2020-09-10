@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+.Rproj.user
+inst/doc
+doc/*.R
+doc/*.Rmd
+Meta
+Documentation
+
+# Package building
+Package.R
+
+doc

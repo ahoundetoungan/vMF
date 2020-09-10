@@ -6,8 +6,8 @@
 \title{Sample from von Mises - Fisher distribution}
 \description{
 vMF samples from von Mises-Fisher distribution and performs some operations. 
-Unlike the \href{https://cran.r-project.org/package=movMF}{movMF} package, vMF does not consider mixtures of von Mises-Fisher distrubution.
-vFM particulary focuses on sampling from the distribution and performs it very quickly. This is useful to carry out fastly simulations in directional statistics.
+Unlike the \href{https://cran.r-project.org/package=movMF}{movMF} package, vMF does not consider mixtures of von Mises-Fisher distribution.
+vFM particularly focuses on sampling from the distribution and performs it very quickly. This is useful to carry out fast simulations in directional statistics.
 vMF also computes the density and normalization constant of the von Mises-Fisher distribution.
 }
 \note{

@@ -1,16 +1,24 @@
 Package: vMF
+Type: Package
 Title: Sampling from von Mises-Fisher Distribution
-Version: 0.1
-Date: 2019-03-22
-Authors@R: person("Elysee Aristide", "Houndetoungan", email = "ariel92and@gmail.com",
-                  role = c("aut", "cre"))
-Author: Elysee Aristide Houndetoungan [aut, cre]
-Maintainer: Elysee Aristide Houndetoungan <ariel92and@gmail.com>
-Description: Provides fast sampling from von Mises-Fisher distribution use the method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>. Unlike 'movMF' of Kurt Hornik and Bettina Grün (2014) <doi:10.18637/jss.v058.i10> the mixtures on von Mises-Fisher distributions are not consider. However, fast sampling frow the distribution are particulary regarded here. Advanved examples available \href{<https://houndetoungan.wixsite.com/aristide/fast-sampling-from-vmf-distribution>}{online} show how fast the sampling is and its usefulness.
-License: GPL (>= 2)
+Version: 0.0.1
+Date: 2019-09-02
+Authors@R: person("Elysée Aristide", "Houndetoungan", role = c("cre","aut"), email =  "ariel92and@gmail.com")
+Description: Provides fast sampling from von Mises-Fisher distribution use the method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>. Unlike 'movMF' of Kurt Hornik and Bettina Grün (2014) <doi:10.18637/jss.v058.i10> the mixtures on von Mises-Fisher distributions are not consider. However, fast sampling from the distribution are particularly regarded here. Advanced examples available 
+\href{<https://ahoundetoungan.com/blog/2017/12/01/An-R-Package-for-Fast-Sampling-from-von-Mises-Fisher-Distribution.html>}{online} show how fast the sampling is and its usefulness.
+License: GPL-3 + file LICENSE
+Encoding: UTF-8
+BugReports: https://github.com/ahoundetoungan/vMF/issues
+URL: https://github.com/ahoundetoungan/vMF
+LazyData: true
+Depends: R (>= 3.5.0)
 Imports: 
     Rcpp
 LinkingTo: Rcpp, RcppArmadillo, BH
-Suggests: movMF, microbenchmark
-Depends: R (>= 3.3)
-RoxygenNote: 7.1.0
+Suggests: 
+    movMF,
+    rbenchmark,
+    knitr,
+    rmarkdown
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
