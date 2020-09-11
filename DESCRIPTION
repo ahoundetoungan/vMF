@@ -19,6 +19,8 @@ Suggests:
     movMF,
     rbenchmark,
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggplot2,
+    ddpcr
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
