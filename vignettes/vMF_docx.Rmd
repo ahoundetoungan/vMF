@@ -73,7 +73,7 @@ from the left with a matrix where the first $d-1$ columns consist of unitary bas
 the subspace orthogonal to $\boldsymbol{\mu}$ and the last column is equal to $\boldsymbol{\mu}$.
 
 # Package Installation{-#vmf}
-The code source of the package is written in C++ with the package **Rcpp** [@R-Rcpp]. **vMF**  is currently available on GitHub. Its installation requires to prior install **devtools** package [@R-devtools]. Moreover, Windows users should install Rtools compatible with their R version.
+The code source of the package is written in C++ with the package **Rcpp** [@R-Rcpp]. **vMF**  is currently available on [GitHub](https://github.com/ahoundetoungan/vMF). Its installation requires to prior install **devtools** package [@R-devtools]. Moreover, Windows users should install Rtools compatible with their R version.
 
 **vMF** package can be installed from this GitHub repos using the `install_github` function of **devtools**. All the dependencies will also be installed automatically.
 
@@ -130,7 +130,7 @@ fcompare(100)
 **vMF** performs over **[movMF](https://CRAN.R-project.org/package=movMF)**. The relative running time of **[movMF](https://CRAN.R-project.org/package=movMF)** decreases when the sample size increases. This is also confirmed by the following outputs. The performance of **vMF** is much better when only few simulations are performed. When the sample is too large, the two package require approximately the same time.
 
 
-```{r ex11, echo = TRUE, eval = TRUE, fig.align = "center"}
+```{r ex11, echo = TRUE, eval = TRUE, fig.height = 4, fig.align = "center"}
 out  <- unlist(lapply(1:200, function(x) fcompare(x)$elapsed[1]/fcompare(x)$elapsed[2]))
 summary(out)
 library(ggplot2)
