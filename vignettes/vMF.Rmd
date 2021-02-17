@@ -13,7 +13,7 @@ biblio-style: "apalike"
 link-citations: true
 urlcolor: blue
 vignette: >
-  %\VignetteIndexEntry{vMF_docx}
+  %\VignetteIndexEntry{An R Package for Fast Sampling from von Mises Fisher Distribution}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -129,10 +129,14 @@ fcompare(100)
 ```
 **vMF** performs over **[movMF](https://CRAN.R-project.org/package=movMF)**. The relative running time of **[movMF](https://CRAN.R-project.org/package=movMF)** decreases when the sample size increases. This is also confirmed by the following outputs. The performance of **vMF** is much better when only few simulations are performed. When the sample is too large, the two package require approximately the same time.
 
-
-```{r ex11, echo = TRUE, eval = TRUE, fig.height = 4, fig.align = "center"}
+```{r ex11a, echo = FALSE, eval = TRUE}
+#load data to save time during the building
+load("out.Rdata")
+```
+```{r ex11b, echo = TRUE, eval = FALSE}
 out  <- unlist(lapply(1:200, function(x) fcompare(x)$elapsed[1]/fcompare(x)$elapsed[2]))
-summary(out)
+```
+```{r ex11c, echo = TRUE, eval = TRUE, fig.height = 4, fig.align = "center"}
 library(ggplot2)
 ggplot(data = data.frame(n = 1:200, time = out), aes(x = n, y = time)) +
   geom_point(col = "blue") + geom_hline(yintercept = 1, col = 2)
@@ -142,7 +146,7 @@ Some papers use simulations from the von Mises Fisher distribution in Markov Cha
 
 In the following code, I consider the process $\left(\mathbf{z}_t\right)_{t\in\mathbb{N}}$ that follows a random walk of von Mises Fisher distribution. The first variable of the process, $\mathbf{z}_0$ is uniformly drawn from an hypersphere of dimension 4 and $\mathbf{z}_t \sim \mathcal{M}\left(1,\mathbf{z}_{t - 1}\right)$ $\forall t > 0$. Simulating this process has the same complexity as using von Mises Fisher draws in MCMC.  I use both package functions to simulate the first $1000$ values of $\left(\mathbf{z}_t\right)_{t\in\mathbb{N}}$. 
 
-```{r ex2, echo = TRUE, eval = TRUE}
+```{r ex2a, echo = TRUE, eval = FALSE}
 set.seed(123)
 P                  <- 4
 initial            <- rmovMF(1, rep(0, P))
@@ -166,5 +170,8 @@ SamplemovMF        <-function(n){
   return(output)
 }
 benchmark("vMF" = SamplevMF(1000), "movMF" = SamplemovMF(1000))
+```
+```{r ex2b, echo = FALSE, eval = TRUE}
+print(outbench)
 ```
 The comparison of the running times shows that **vMF** performs better.
