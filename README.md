@@ -1,5 +1,5 @@
 # An R Package for Fast Sampling from von Mises Fisher Distribution
-The **vMF** package implements fast sampling from von Mises-Fisher distribution use the method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.
+The **vMF** package implements fast sampling from von Mises-Fisher distribution using the method proposed by [Andrew T.A Wood (1994)](https://www.tandfonline.com/doi/abs/10.1080/03610919408813161).
 
 ## Installation
 ### Requirements
@@ -20,4 +20,4 @@ Once the installation is done, **vMF** can be loaded as a common package in [**R
 library(vMF)
 ```
 ### How to use vMF
-I provide a [vignette](https://nbviewer.jupyter.org/github/ahoundetoungan/vMF/blob/master/doc/vMF.pdf) that fully documents the package. Moreover, each function of the package has a help page accessible using `?name-of-the-function`. 
+I provide a [vignette](https://nbviewer.jupyter.org/github/ahoundetoungan/vMF/blob/master/doc/vMF.pdf) that fully documents the package. Moreover, each function of the package has a help page accessible using `?name-of-the-function`.
