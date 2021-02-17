@@ -20,4 +20,4 @@ Once the installation is done, **vMF** can be loaded as a common package in [**R
 library(vMF)
 ```
 ### How to use vMF
-I provide a [vignette](https://nbviewer.jupyter.org/github/ahoundetoungan/vMF/blob/master/doc/vMF_docx.pdf) that fully documents the package. Moreover, each function of the package has a help page accessible using `?name-of-the-function`. 
+I provide a [vignette](https://nbviewer.jupyter.org/github/ahoundetoungan/vMF/blob/master/doc/vMF.pdf) that fully documents the package. Moreover, each function of the package has a help page accessible using `?name-of-the-function`. 
