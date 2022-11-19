@@ -5,7 +5,7 @@
 #' @details  The probability density function of the von Mises - Fisher distribution is defined by :
 #' \deqn{f(z|theta) = C_p(|theta|)\exp{(z theta)}}
 #' \eqn{|theta|} is the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter. The normalization constant \eqn{C_p()} depends 
-#' on the Bessel function of the first kind. See more details \href{http://en.wikipedia.com/wiki/Von_Mises-Fisher_distribution}{here}.
+#' on the Bessel function of the first kind. See more details \href{https://en.wikipedia.org/wiki/Von_Mises-Fisher_distribution}{here}.
 #' 
 #' @param p as sphere dimension.
 #' @param k as the intensity parameter.
@@ -14,10 +14,10 @@
 #' 
 #' CpvMF(2,3.1)
 #' 
-#' @author 
-#' Aristide Houndetoungan <\email{ariel92and@@gmail.com}>
-#' @keywords 
-#' distribution, directional statistics, coordinates
+#' @keywords distribution 
+#' @keywords directional statistics 
+#' @keywords coordinates
+#' @keywords simulations
 #' @seealso 
 #' \code{\link{rvMF}} and \code{\link{dvMF}}
 #' 

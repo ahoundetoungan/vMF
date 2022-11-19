@@ -37,10 +37,8 @@ Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. \emph{Commu
 
 Hornik, K., & Grun, B. (2014). \pkg{movMF}: An \R package for fitting mixtures of von Mises-Fisher distributions. \emph{Journal of Statistical Software}, 58(10), 1-31. \url{https://epub.wu.ac.at/4893/}.
 }
-\author{
-Aristide Houndetoungan <\email{ariel92and@gmail.com}>
-}
 \keyword{coordinates}
 \keyword{directional}
-\keyword{distribution,}
-\keyword{statistics,}
+\keyword{distribution}
+\keyword{simulations}
+\keyword{statistics}

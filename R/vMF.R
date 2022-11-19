@@ -11,9 +11,6 @@
 #' @author 
 #' Aristide Houndetoungan <\email{ariel92and@@gmail.com}>
 #'   
-#' @note 
-#' Advanced examples of using vMF are available \href{https://ahoundetoungan.github.io/blog/2017/12/01/Fast-sampling-from-von-Mises-Fisher-distribution}{online}.
-#'   
 #' @references  
 #' Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. \emph{Communications in statistics-simulation and computation}, 23(1), 157-164. \url{https://www.tandfonline.com/doi/abs/10.1080/03610919408813161}.
 #' @references 

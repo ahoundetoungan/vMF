@@ -1,6 +1,6 @@
 ---
 title: "An R Package for Fast Sampling from von Mises Fisher Distribution"
-author: "Elysée Aristide Houndetoungan"
+author: "Elys\u00E9e Aristide Houndetoungan"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
@@ -30,25 +30,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Context{-#over}
+# Introduction{-#over}
 
-I build an R package named **vMF** which samples from the von Mises-Fisher distribution ($\mathcal{M}$) as [**movMF**](https://CRAN.R-project.org/package=movMF). However, unlike the [**movMF**](https://CRAN.R-project.org/package=movMF) package [@R-movMF] which also simulates and estimates mixtures of $\mathcal{M}$, **vFM** instead focuses on fast sampling from $\mathcal{M}$. The package also computes the density and the normalization constant of the von Mises-Fisher distribution.
+The package **vMF** simulates von Mises-Fisher distribution ($\mathcal{M}$). Unlike the package [**movMF**](https://CRAN.R-project.org/package=movMF) [@hornik2014movmf], which simulates and estimates mixtures of $\mathcal{M}$, **vFM** performs  fast sampling as its source code is written in C++. **vFM** also computes the density and the normalization constant of $\mathcal{M}$.
 
-Note that [**movMF**](https://CRAN.R-project.org/package=movMF) is more general and can be used for many other purposes. It cannot be replaced by **vMF** which is more specific. 
-
-
-The von Mises Fisher distribution is used to model coordinates on a hypersphere of dimension $p \ge 2$. It can be considered as the equivalent of the normal distribution on a hypersphere. The  von Mises Fisher distribution is characterized by two parameters. The location (or mean directional) parameter $\boldsymbol{\mu}$ around which simulations from the distribution will be concentrated and the intensity parameter $\eta$ which measures the intensity of concentration of the simulations around $\boldsymbol{\mu}$. The higher $\eta$, the more the simulations are concentrated around $\boldsymbol{\mu}$. Comparing to the normal distribution, $\boldsymbol{\mu}$ is similar to the mean parameter of the normal distribution and $\dfrac{1}{\eta}$ is similar to the standard deviation.
+The von Mises-Fisher distribution is used to model coordinates on a hypersphere of dimension $p \ge 2$. Roughly speaking, it is the equivalent of the normal distribution on a hypersphere. As the normal distribution, $\mathcal{M}$ is characterized by two parameters. The location (or mean directional) parameter $\boldsymbol{\mu}$ around which draws will be concentrated and the intensity parameter $\eta$ which measures the intensity of concentration of the draws around $\boldsymbol{\mu}$. The higher $\eta$, the more the draws are concentrated around $\boldsymbol{\mu}$. Compared to the normal distribution, $\boldsymbol{\mu}$ is similar to the mean parameter of the normal distribution and $1/\eta$ is similar to the standard deviation.
 
 There are several definitions of the density function of $\mathcal{M}$. In this package, the density is normalized by the uniform distribution without loss of generality. This is also the case in @mardia2009directional and @hornik2013conjugate.
 
-Let $\mathbf{z} \sim \mathcal{M}\left(\eta,\boldsymbol{\mu}\right)$. Then,
+Let $\mathbf{z} \sim \mathcal{M}\left(\eta,\boldsymbol{\mu}\right)$. The density of $\mathbf{z}$ is given by
 
 $$f_p(\mathbf{z}|\eta, \boldsymbol{\mu}) =C_p(\eta) e^{\eta\mathbf{z}'\boldsymbol{\mu}},$$
 where $\displaystyle C_p(x) = \left(\frac{x}{2}\right)^{\frac{p}{2}-1}\frac{1}{\Gamma\left(\frac{p}{2}\right)I_{\frac{p}{2}-1}(x)}$ is the normalization constant and $I_.(.)$ the Bessel function of the first kind defined by: $$\displaystyle I_{\alpha}(x) = \sum_{m=0}^{\infty}\frac{\left(\frac{x}{2}\right)^{2m+\alpha}}{m!\Gamma(m+\alpha + 1)}.$$
-\noindent The normalization with respect to the uniform distribution simplifies some results. For example, $C_p(0)=1$.
+\noindent The normalization with respect to the uniform distribution implies $C_p(0)=1$.
 
 # Simulation from von Mises Fisher distribution{-#sim}
-The following algorithm provides a rejection sampling scheme for drawing a sample from the $\mathcal{M}$ with mean directional parameter $\boldsymbol{\mu} = (0, ... , 0, 1)$ and concentration (intensity) parameter $\eta \ge 0$ [see Section 2.1 in @hornik2014movmf]. 
+The following algorithm provides a rejection sampling scheme for drawing a sample from $\mathcal{M}$ with mean directional parameter $\boldsymbol{\mu} = (0, ... , 0, 1)$ and concentration (intensity) parameter $\eta \ge 0$ [see Section 2.1 in @hornik2014movmf]. 
 
 * Step 1. Calculate $b$ using * Step 1. Calculate $b$ using
 
@@ -62,29 +59,18 @@ $$W = \dfrac{1-(1+b)Z}{1-(1-b)Z}.$$
 
 $$\eta W+(p-1)\log(1-x_0W)-c<\log(U),$$ go to step 2.
 
-* Step 4. Generate a uniform $(d-1)$-dimensional unit vector $V$ and return
+* Step 4. Generate a uniform $(d-1)$-dimensional unit vector $\mathbf{V}$ and return
 
-$$X =\left(\sqrt{1- W^2}V^{\prime},W\right)^{\prime}$$
+$$\mathbf{X} =\left(\sqrt{1- W^2}\mathbf{V}^{\prime},W\right)^{\prime}$$
 
-The uniform ($d-1$)-dimensional unit vector $V$ can be generated by simulating $d-1$ independent
-standard normal random variables and normalizing them. To get
-samples from $\mathcal{M}$ with arbitrary mean direction parameter $\boldsymbol{\mu}$, $X$ is multiplied
+The uniform ($d-1$)-dimensional unit vector $\mathbf{V}$ can be generated by simulating $d-1$ independent
+standard normal random variables and normalizing them so as $\lVert \mathbf{V} \rVert_2 = 1$. To get
+sampling from $\mathcal{M}$ with arbitrary mean direction parameter $\boldsymbol{\mu}$, $\mathbf{X}$ is multiplied
 from the left with a matrix where the first $d-1$ columns consist of unitary basis vectors of
 the subspace orthogonal to $\boldsymbol{\mu}$ and the last column is equal to $\boldsymbol{\mu}$.
 
-# Package Installation{-#vmf}
-The code source of the package is written in C++ with the package **Rcpp** [@R-Rcpp]. **vMF**  is currently available on [GitHub](https://github.com/ahoundetoungan/vMF). Its installation requires to prior install **devtools** package [@R-devtools]. Moreover, Windows users should install Rtools compatible with their R version.
-
-**vMF** package can be installed from this GitHub repos using the `install_github` function of **devtools**. All the dependencies will also be installed automatically.
-
-```{r install, echo = TRUE, eval = FALSE}
-library(devtools) 
-install_github("ahoundetoungan/vMF")
-```
-The option `build_vignettes = TRUE` can be added if one desires to install the vignettes.
-
 # Comparison of vMF and movMF{-#comp}
-In this section, I compare **vMF** and **[movMF](https://CRAN.R-project.org/package=movMF)**. First of all, I compare samples drawn from both packages to make sure that they are identical.
+In this section, I compare **vMF** and **[movMF](https://CRAN.R-project.org/package=movMF)**. First, I compare draws from both packages to make sure that they are the same.
 
 ```{r comp1, echo = TRUE, eval = TRUE}
 library(vMF)
@@ -99,7 +85,7 @@ all.equal(c(xvMF), c(xmovMF))
 xvMF
 xmovMF
 ```
-The outputs are surprisingly different although the random number generators are set fixed. By checking the source code of **[movMF](https://CRAN.R-project.org/package=movMF)** to understand the issue, I notice that both packages do not code their sampling function as the same way. In **[movMF](https://CRAN.R-project.org/package=movMF)**, the function is more general and is built for drawing samples from mixture of $\mathcal{M}$. The sampling function first generates $n$ (the sample size) random numbers from the uniform distribution before running the algorithm described above for the simulation. The uniform random numbers are used further in the function when it is mixture of $\mathcal{M}$. However, they are not used when the distribution is not mixed. Therefore, the outputs are different as the random numbers generator is called $n$ times before running the simulation algorithm in **[movMF](https://CRAN.R-project.org/package=movMF)**. In that case, even by the random number generators are set fixed, they will not return the same numbers. To get the same outputs, I also need to simulate $n$ numbers from uniform distribution after setting the random number generator and before calling `rvMF`.  
+The outputs are surprisingly different although the random number generators are fixed. After studying the source code of **[movMF](https://CRAN.R-project.org/package=movMF)**, I notice that the two packages do not code their sampling function in the same way. The function `rmovMF` is more general and is designed to draw samples from a mixture of $\mathcal{M}$. The sampling function first generates $n$ (the sample size) random numbers from the uniform distribution before running the algorithm described above. This simulation modifies the random number generators. One can then obtain the same output by first simulating $n$ numbers from the uniform distribution before calling the function `rvMF`.
 
 ```{r comp2, echo = TRUE, eval = TRUE}
 n      <- 30
@@ -113,9 +99,7 @@ xvMF[1:5,]
 xmovMF[1:5,]
 ```
 
-In doing so, the outputs are identical.
-
-I now compare the performance of both packages, especially the running times required to draw samples. I use the **[rbenchmark](https://CRAN.R-project.org/package=rbenchmark)** package [@R-rbenchmark] and compare the performance for several sample sizes.
+I now compare the performance of both packages.
 ```{r ex1, echo = TRUE, eval = TRUE}
 library(rbenchmark) 
 
@@ -127,7 +111,7 @@ fcompare(1)
 fcompare(10)
 fcompare(100)
 ```
-**vMF** performs over **[movMF](https://CRAN.R-project.org/package=movMF)**. The relative running time of **[movMF](https://CRAN.R-project.org/package=movMF)** decreases when the sample size increases. This is also confirmed by the following outputs. The performance of **vMF** is much better when only few simulations are performed. When the sample is too large, the two package require approximately the same time.
+**vMF** performs over **[movMF](https://CRAN.R-project.org/package=movMF)**. The performance of **vMF** is much better when only few simulations are performed. When the sample is too large, the two package require approximately the same running time.
 
 ```{r ex11a, echo = FALSE, eval = TRUE}
 #load data to save time during the building
@@ -142,9 +126,8 @@ ggplot(data = data.frame(n = 1:200, time = out), aes(x = n, y = time)) +
   geom_point(col = "blue") + geom_hline(yintercept = 1, col = 2)
 ```
 
-Some papers use simulations from the von Mises Fisher distribution in Markov Chain Monte Carlo (MCMC). In these frameworks, only one draw is performed at each iteration of the MCMC. This is for example the case in @boucher2019partial, @breza2020using, @mccormick2015latent and many others. I would suggest using **vMF** package in such contexts.
-
-In the following code, I consider the process $\left(\mathbf{z}_t\right)_{t\in\mathbb{N}}$ that follows a random walk of von Mises Fisher distribution. The first variable of the process, $\mathbf{z}_0$ is uniformly drawn from an hypersphere of dimension 4 and $\mathbf{z}_t \sim \mathcal{M}\left(1,\mathbf{z}_{t - 1}\right)$ $\forall t > 0$. Simulating this process has the same complexity as using von Mises Fisher draws in MCMC.  I use both package functions to simulate the first $1000$ values of $\left(\mathbf{z}_t\right)_{t\in\mathbb{N}}$. 
+Many papers use simulations from the von-Mises Fisher distribution in a Markov Chain Monte Carlo (MCMC) process. A single draw is performed at each iteration of the MCMC. This is for example the case in @boucher2019partial, @breza2020using, @mccormick2015latent. In such a simulation context, using **vMF** would take much less time than **[movMF](https://CRAN.R-project.org/package=movMF)**.
+For example, I consider the process $\left(\mathbf{z}_t\right)_{t\in\mathbb{N}}$ which follows a random walk of the von-Mises Fisher distribution. The first variable, $\mathbf{z}_0$, is randowmly set on a 4-dimensional hypersphere and $\mathbf{z}_t \sim \mathcal{M}\left(1,\mathbf{z} _ {t - 1}\right)$ $\forall$ $t > 0$. Simulating this process has about the same complexity as using von-Mises Fisher drawings in an MCMC.
 
 ```{r ex2a, echo = TRUE, eval = FALSE}
 set.seed(123)
@@ -174,4 +157,4 @@ benchmark("vMF" = SamplevMF(1000), "movMF" = SamplemovMF(1000))
 ```{r ex2b, echo = FALSE, eval = TRUE}
 print(outbench)
 ```
-The comparison of the running times shows that **vMF** performs better.
+The comparison of the running times  **vMF** is less time-consuming

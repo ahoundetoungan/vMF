@@ -21,7 +21,7 @@ the normalization constant.
 The probability density function of the von Mises - Fisher distribution is defined by :
 \deqn{f(z|theta) = C_p(|theta|)\exp{(z theta)}}
 \eqn{|theta|} is the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter. The normalization constant \eqn{C_p()} depends 
-on the Bessel function of the first kind. See more details \href{http://en.wikipedia.com/wiki/Von_Mises-Fisher_distribution}{here}.
+on the Bessel function of the first kind. See more details \href{https://en.wikipedia.org/wiki/Von_Mises-Fisher_distribution}{here}.
 }
 \examples{
 
@@ -36,10 +36,8 @@ Hornik, K., & Grun, B. (2014). \pkg{movMF}: An \R package for fitting mixtures o
 \seealso{
 \code{\link{rvMF}} and \code{\link{dvMF}}
 }
-\author{
-Aristide Houndetoungan <\email{ariel92and@gmail.com}>
-}
 \keyword{coordinates}
 \keyword{directional}
-\keyword{distribution,}
-\keyword{statistics,}
+\keyword{distribution}
+\keyword{simulations}
+\keyword{statistics}

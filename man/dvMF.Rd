@@ -22,9 +22,10 @@ the densities computed at each point
 The probability density function of the von Mises - Fisher distribution is defined by :
 \deqn{f(z|theta) = C_p(|theta|)\exp{(z theta)}}
 \eqn{|theta|} is the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter. The normalization constant \eqn{C_p()} depends 
-on the Bessel function of the first kind. See more details \href{http://en.wikipedia.com/wiki/Von_Mises-Fisher_distribution}{here}.
+on the Bessel function of the first kind. See more details \href{https://en.wikipedia.org/wiki/Von_Mises-Fisher_distribution}{here}.
 }
 \examples{
+{}
 # Draw 1000 vectors from vM-F with parameter 1, (1,0)
 z <- rvMF(1000,c(1,0))
 
@@ -32,7 +33,7 @@ z <- rvMF(1000,c(1,0))
 dvMF(z,c(1,0))
 
 # Density of (0,1,0,0) with the parameter 3, (0,1,0,0)
-dvMF(c(0,1,0,0),c(0,3,0,0)) 
+dvMF(c(0,1,0,0),c(0,3,0,0))
 }
 \references{
 Wood, A. T. (1994). Simulation of the von Mises Fisher distribution. \emph{Communications in statistics-simulation and computation}, 23(1), 157-164. \url{https://www.tandfonline.com/doi/abs/10.1080/03610919408813161}.
@@ -47,5 +48,6 @@ Aristide Houndetoungan <\email{ariel92and@gmail.com}>
 }
 \keyword{coordinates}
 \keyword{directional}
-\keyword{distribution,}
-\keyword{statistics,}
+\keyword{distribution}
+\keyword{simulations}
+\keyword{statistics}

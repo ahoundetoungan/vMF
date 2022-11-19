@@ -1,9 +1,9 @@
 Package: vMF
 Type: Package
-Title: Sampling from von Mises-Fisher Distribution
+Title: Sampling from the von Mises-Fisher Distribution
 Version: 0.0.1
-Date: 2019-09-02
-Authors@R: person("Elysée Aristide", "Houndetoungan", role = c("cre","aut"), email =  "ariel92and@gmail.com")
+Date: 2022-11-20
+Authors@R: person("Elysee Aristide", "Houndetoungan", role = c("cre","aut"), email =  "ariel92and@gmail.com")
 Description: Provides fast sampling from von Mises-Fisher distribution using the method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.
 License: GPL-3
 Encoding: UTF-8
@@ -11,15 +11,15 @@ BugReports: https://github.com/ahoundetoungan/vMF/issues
 URL: https://github.com/ahoundetoungan/vMF
 LazyData: true
 Depends: R (>= 3.5.0)
-Imports: 
+Imports:
     Rcpp
 LinkingTo: Rcpp, RcppArmadillo, BH
-Suggests: 
+Suggests:
     movMF,
     rbenchmark,
     knitr,
     rmarkdown,
     ggplot2,
     ddpcr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 VignetteBuilder: knitr

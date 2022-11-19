@@ -5,13 +5,13 @@
 #' @details  The probability density function of the von Mises - Fisher distribution is defined by :
 #' \deqn{f(z|theta) = C_p(|theta|)\exp{(z theta)}}
 #' \eqn{|theta|} is the intensity parameter and \eqn{\frac{theta}{|theta|}} the mean directional parameter. The normalization constant \eqn{C_p()} depends 
-#' on the Bessel function of the first kind. See more details \href{http://en.wikipedia.com/wiki/Von_Mises-Fisher_distribution}{here}.
+#' on the Bessel function of the first kind. See more details \href{https://en.wikipedia.org/wiki/Von_Mises-Fisher_distribution}{here}.
 #' 
 #' @param z as the set of points at which the spherical coordinate will be evaluated. z may be an one row matrix or vector if it contain one spherical coordinates or a
 #' matrix whose each row is one spherical coordinates.
 #' @param theta as the distribution parameter.
 #' @return the densities computed at each point 
-#' @examples
+#' @examples{}
 #' # Draw 1000 vectors from vM-F with parameter 1, (1,0)
 #' z <- rvMF(1000,c(1,0))
 #' 
@@ -19,11 +19,13 @@
 #' dvMF(z,c(1,0))
 #' 
 #' # Density of (0,1,0,0) with the parameter 3, (0,1,0,0)
-#' dvMF(c(0,1,0,0),c(0,3,0,0)) 
+#' dvMF(c(0,1,0,0),c(0,3,0,0))
 #' @author 
 #' Aristide Houndetoungan <\email{ariel92and@@gmail.com}>
-#' @keywords 
-#' distribution, directional statistics, coordinates
+#' @keywords distribution 
+#' @keywords directional statistics 
+#' @keywords coordinates
+#' @keywords simulations
 #' @seealso 
 #' \code{rvMF} and \code{\link{CpvMF}} 
 #' 
@@ -35,6 +37,6 @@
 
 
 dvMF <- function(z, theta){
-  if(class(z) == "numeric") z <- matrix(z,nrow = 1)
+  if(inherits(z, "numeric")) z <- matrix(z,nrow = 1)
   return(as.vector(cppdvMF(z,theta)))
 }
