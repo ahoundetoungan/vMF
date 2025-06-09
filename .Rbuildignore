@@ -5,3 +5,16 @@ Package.R
 ^doc$
 ^Meta$
 ^Documentation$
+^archives$
+^Results$
+^.github$
+^test$
+^\.gitignore$
+^\.Rbuildignore$
+^\.Rhistory$
+^QuantilePeer\.Rproj, README\.md$
+^vignettes/\.gitignore$
+^scr/*\.so$
+^scr/*\.o$
+^\.tar\.gz$
+^vignettes/\.pdf$

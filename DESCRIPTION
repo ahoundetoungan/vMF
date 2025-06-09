@@ -1,9 +1,9 @@
 Package: vMF
 Type: Package
 Title: Sampling from the von Mises-Fisher Distribution
-Version: 0.0.2
-Date: 2023-09-01
-Authors@R: person("Aristide", "Houndetoungan", role = c("cre","aut"), email =  "ariel92and@gmail.com")
+Version: 0.0.4
+Date: 2025-07-09
+Authors@R: person("Aristide", "Houndetoungan", role = c("cre","aut"), email =  "aristide.houndetoungan@ecn.ulaval.ca")
 Description: Provides fast sampling from von Mises-Fisher distribution using the method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.
 License: GPL-3
 Encoding: UTF-8
@@ -21,5 +21,5 @@ Suggests:
     rmarkdown,
     ggplot2,
     ddpcr
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
