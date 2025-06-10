@@ -8,6 +8,7 @@ Package.R
 ^archives$
 ^Results$
 ^.github$
+^.scripts$
 ^test$
 ^\.gitignore$
 ^\.Rbuildignore$
