@@ -3,7 +3,7 @@ library(cranlogs)
 library(jsonlite)
 
 pkg <- "vMF"
-downloads <- cran_downloads(pkg, from = "2022-01-01")
+downloads <- cran_downloads(pkg, from = "2022-11-21")
 total <- sum(downloads$count)
 
 # Format number
