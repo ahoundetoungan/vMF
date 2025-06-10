@@ -5,7 +5,7 @@
 
   [![R-universe](https://ahoundetoungan.r-universe.dev/badges/vMF)](https://ahoundetoungan.r-universe.dev/vMF)
   [![CRAN](https://www.r-pkg.org/badges/version/vMF)](https://CRAN.R-project.org/package=vMF)
-  [![CRAN Downloads](https://img.shields.io/endpoint?url=https://ahoundetoungan.github.io/vMF/badges/cran_downloads.json)](https://cran.r-project.org/package=vMF)
+  [![CRAN Downloads](https://img.shields.io/endpoint?url=https://ahoundetoungan.github.io/cranlogs/badges/vMF.json)](https://cran.r-project.org/package=vMF)
 
   [![Vignette](https://img.shields.io/badge/Vignette-blue.svg)](https://nbviewer.org/github/ahoundetoungan/vMF/blob/master/doc/vMF.pdf)
 
