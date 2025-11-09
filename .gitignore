@@ -1,15 +1,16 @@
 doc/*.R
 doc/*.Rmd
-Documentation/*
-Package.R
-*.so
 *.o
-/.Rhistory
+*.so
 # doc
 Meta
 
+# Some archives files
+archives/PartialNetwork_1.0.0-2draws.tar.gz
+archives/PartialNetwork_1.0.0-3draws-intensive.tar.gz
+
 # History files
-.Rhistory
+/*.Rhistory
 .Rapp.history
 
 # Session Data files
@@ -33,6 +34,7 @@ Meta
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+vignettes/*.log
 
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
@@ -49,3 +51,6 @@ vignettes/*.pdf
 .Renviron
 inst/doc
 /Meta/
+/[^/]*.R
+# /doc/
+/doc/

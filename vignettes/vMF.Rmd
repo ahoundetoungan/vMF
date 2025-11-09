@@ -92,7 +92,7 @@ The outputs are surprisingly different although the random number generators are
 ```{r comp2, echo = TRUE, eval = TRUE}
 n      <- 30
 set.seed(123)
-ddpcr::quiet(runif(n))
+invisible(runif(n))
 xvMF   <- rvMF(n,c(1,0,0))
 set.seed(123)
 xmovMF <- rmovMF(n,c(1,0,0))

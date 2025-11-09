@@ -1,21 +1,26 @@
-^.*\.Rproj$
-^\.Rproj\.user$
-
-Package.R
 ^doc$
 ^Meta$
-^Documentation$
+^test$
 ^archives$
-^Results$
+^vMF.Rcheck$
+^Replication$
 ^scripts$
 ^.github$
-^.scripts$
-^test$
+^\.travis\.yml$
 ^\.gitignore$
 ^\.Rbuildignore$
 ^\.Rhistory$
-^QuantilePeer\.Rproj, README\.md$
+^README\.md$
 ^vignettes/\.gitignore$
+^src/.*\.so$
+^src/.*\.o$
+^datavignettes/
+^\.Rproj\.user$
+^.*\.tar\.gz$
+^vignettes/.*\.pdf$
+^[^/]*\.R$
+^.*\.Rproj$
+^QuantilePeer\.Rproj, README\.md$
 ^scr/*\.so$
 ^scr/*\.o$
 ^\.tar\.gz$
