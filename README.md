@@ -3,8 +3,8 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![R-CMD-check](https://github.com/ahoundetoungan/vMF/actions/workflows/R-CMD-check.yml/badge.svg)](https://github.com/ahoundetoungan/vMF/actions/workflows/R-CMD-check.yml)
 
-  [![R-universe](https://ahoundetoungan.r-universe.dev/badges/vMF)](https://ahoundetoungan.r-universe.dev/vMF)
   [![CRAN](https://www.r-pkg.org/badges/version/vMF)](https://CRAN.R-project.org/package=vMF)
+  [![R-universe](https://ahoundetoungan.r-universe.dev/badges/vMF)](https://ahoundetoungan.r-universe.dev/vMF)
   [![DOI](https://img.shields.io/badge/DOI-10.32614%2FCRAN.package.vMF-blue)](https://doi.org/10.32614/CRAN.package.vMF)
   [![CRAN Downloads](https://img.shields.io/endpoint?url=https://ahoundetoungan.github.io/cranlogs/badges/vMF.json)](https://cran.r-project.org/package=vMF)
 
